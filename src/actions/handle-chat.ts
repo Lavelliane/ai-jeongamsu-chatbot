@@ -1,5 +1,5 @@
 'use server';
-import { v4 as uuidv4 } from 'uuid';
+
 import { createClient } from '@/lib/db/server';
 import { ChatOpenAI } from "@langchain/openai";
 
@@ -27,7 +27,7 @@ export async function handleChat(input: string, sessionId: string) {
         ]
     );
     
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from('conversations')
       .insert([{ message: input, response: response.content, session_id: sessionId }]);
     
