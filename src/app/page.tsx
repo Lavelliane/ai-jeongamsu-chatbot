@@ -19,7 +19,6 @@ export default async function Home() {
           initialMessages={conversations as { id: string; message: string; response: string; session_id: string }[]} 
         />
       </Suspense>
-      <div>test</div>
     </div>
   );
 }
