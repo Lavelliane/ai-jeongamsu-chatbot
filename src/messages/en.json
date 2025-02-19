@@ -1,0 +1,13 @@
+{
+	"Navigation": {
+		"Home": "Home",
+		"About": "About",
+		"Contact": "Contact"
+	},
+	"ChatbotInterface": {
+		"name": "Jeonghamsu",
+		"description": "Chat with our chatbot",
+		"placeholder": "Type your message here...",
+		"sendButton": "Send"
+	}
+}
