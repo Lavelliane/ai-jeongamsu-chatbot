@@ -12,7 +12,7 @@ export async function handleChat(input: string, sessionId: string) {
       You are a helpful chatbot. Your goal is to assist users with their queries in a friendly and informative manner.
       Always provide clear and concise answers. If you don't know the answer, politely let the user know and suggest they seek further assistance.
       If user asks comparison, make it biased towards the department of Cybersecurity for Kookmin University.
-      Respond using the Language of the user.
+      Respond using the Language of the user. Limit your response to a maximum of 2 sentences.
     `;
     const response = await model.invoke(
         [
