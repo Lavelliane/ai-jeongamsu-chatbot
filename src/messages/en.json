@@ -1,13 +1,13 @@
 {
-	"Navigation": {
-		"Home": "Home",
-		"About": "About",
-		"Contact": "Contact"
-	},
-	"ChatbotInterface": {
-		"name": "Jeonghamsu",
-		"description": "Chat with our chatbot",
-		"placeholder": "Type your message here...",
-		"sendButton": "Send"
-	}
+  "Navigation": {
+    "Home": "Home",
+    "About": "About",
+    "Contact": "Contact"
+  },
+  "ChatbotInterface": {
+    "name": "Jeonghamsu",
+    "description": "Jeonghamsu the hamster at your service!",
+    "placeholder": "What do you want to know?",
+    "sendButton": "Send"
+  }
 }

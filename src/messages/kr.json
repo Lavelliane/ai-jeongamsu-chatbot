@@ -1,13 +1,13 @@
 {
-	"Navigation": {
-		"Home": "홈",
-		"About": "소개",
-		"Contact": "연락"
-	},
-	"ChatbotInterface": {
-		"name": "정함수",
-		"description": "챗봇과 대화하세요",
-		"placeholder": "메시지를 입력하세요...",
-		"sendButton": "보내기"
-	}
+  "Navigation": {
+    "Home": "홈",
+    "About": "소개",
+    "Contact": "연락"
+  },
+  "ChatbotInterface": {
+    "name": "정함수",
+    "description": "정함수가 당신을 위해 준비되어 있습니다!",
+    "placeholder": "무엇을 알고 싶으신가요?",
+    "sendButton": "보내기"
+  }
 }
