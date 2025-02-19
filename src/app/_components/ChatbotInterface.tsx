@@ -8,10 +8,11 @@ import icon from '../../../public/jeonghamsu-icons/2.svg';
 import { createClient } from '@/lib/db/client';
 import { useSearchParams } from 'next/navigation';
 import { marked } from 'marked';
+import { v4 as uuidv4 } from 'uuid';
 
 interface ChatbotInterfaceProps {
   handleChat: (input: string, sessionId: string) => Promise<string>;
-  initialMessages: { id: string; message: string; response: string }[];
+  initialMessages: { id: string; message: string; response: string; session_id: string }[];
 }
 
 const ChatbotInterface = ({ handleChat, initialMessages }: ChatbotInterfaceProps) => {
@@ -20,7 +21,23 @@ const ChatbotInterface = ({ handleChat, initialMessages }: ChatbotInterfaceProps
   const [messages, setMessages] = useState(initialMessages);
   const [isLoading, setIsLoading] = useState(false);
   const searchParams = useSearchParams();
-  const sessionId = searchParams.get('session');
+
+  let sessionId = searchParams.get('session');
+
+  useEffect(() => {
+    if (!sessionId) {
+      console.log('sessionId is null');
+      sessionId = uuidv4();
+      console.log('sessionId is', sessionId);
+      const url = new URL(window.location.href);
+      url.searchParams.set('session', sessionId);
+      window.history.replaceState({}, '', url.toString());
+      setMessages(initialMessages.filter(msg => msg.session_id === sessionId));
+    }else{
+      setMessages(initialMessages.filter(msg => msg.session_id === sessionId));
+    }
+  }, []);
+
 
   useEffect(() => {
     const supabase = createClient();
@@ -36,7 +53,7 @@ const ChatbotInterface = ({ handleChat, initialMessages }: ChatbotInterfaceProps
           table: 'conversations'
         },
         (payload) => {
-          const newMessage = payload.new as { id: string; message: string; response: string };
+          const newMessage = payload.new as { id: string; message: string; response: string; session_id: string };
           // Prevent duplicate messages by checking if it already exists
           setMessages((prev) => {
             if (!prev.some(msg => msg.id === newMessage.id)) {
@@ -66,7 +83,8 @@ const ChatbotInterface = ({ handleChat, initialMessages }: ChatbotInterfaceProps
       const newUserMessage = {
         id: `temp-${Date.now()}`,
         message: currentMessage,
-        response: ''
+        response: '',
+        session_id: sessionId ?? ''
       };
       
       setMessages(prev => [...prev, newUserMessage]);

@@ -3,8 +3,8 @@ import React from 'react';
 import ChatbotInterface from './ChatbotInterface';
 
 interface LandingPageProps {
-  handleChat: (input: string) => Promise<string>;
-  initialMessages: { id: string; message: string; response: string }[];
+  handleChat: (input: string, sessionId: string) => Promise<string>;
+  initialMessages: { id: string; message: string; response: string; session_id: string }[];
 }
 
 const LandingPage = ({ handleChat, initialMessages }: LandingPageProps) => {
