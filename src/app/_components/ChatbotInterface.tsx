@@ -1,10 +1,10 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Send, Menu } from 'lucide-react';
 import Image from 'next/image';
 import LanguageDropdown from '@/components/LanguageDropdown';
 import { useTranslations } from 'next-intl';
-import icon from '../../../public/jeonghamsu-icons/2.svg';
+// import icon from '../../../public/jeonghamsu-icons/2.svg';
 import { createClient } from '@/lib/db/client';
 import { useSearchParams } from 'next/navigation';
 import { marked } from 'marked';
@@ -17,6 +17,7 @@ interface ChatbotInterfaceProps {
 
 const ChatbotInterface = ({ handleChat, initialMessages }: ChatbotInterfaceProps) => {
   const t = useTranslations('ChatbotInterface');
+  const audioRef = useRef<HTMLAudioElement>(null);
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState(initialMessages);
   const [isLoading, setIsLoading] = useState(false);
@@ -91,10 +92,31 @@ const ChatbotInterface = ({ handleChat, initialMessages }: ChatbotInterfaceProps
 
       // Get bot response
       const response = await handleChat(currentMessage, sessionId ?? '');
+      const voice = await fetch('/api/voice', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ text: response })
+      });
 
-      // Update messages with bot response
-      // Note: The actual message will be added via the real-time subscription
-      // This is just for optimistic UI update
+      if (!voice.ok) {
+        throw new Error('Failed to fetch voice');
+      }
+
+      const audioBlob = await voice.blob();
+      const audioUrl = URL.createObjectURL(audioBlob);
+      
+      if (audioRef.current) {
+        audioRef.current.src = audioUrl;
+        const playPromise = audioRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(error => {
+            console.error("Audio playback failed:", error);
+          });
+        }
+      }
+
       setMessages(prev => {
         const lastMessage = prev[prev.length - 1];
         if (lastMessage.id === newUserMessage.id) {
@@ -115,6 +137,7 @@ const ChatbotInterface = ({ handleChat, initialMessages }: ChatbotInterfaceProps
 
   return (
     <div className="flex h-full">
+      <audio ref={audioRef} />
       {/* Tech background pattern */}
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#c3c6ce_1px,transparent_1px),linear-gradient(to_bottom,#c3c6ce_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
@@ -129,7 +152,7 @@ const ChatbotInterface = ({ handleChat, initialMessages }: ChatbotInterfaceProps
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 rounded-full bg-white items-center justify-center flex">
                 <Image
-                  src={icon}
+                  src={'/jeonghamsu-icons/2.svg'}
                   alt="jeonghamsu mascot"
                   width={92}
                   height={92}
