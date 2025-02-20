@@ -10,6 +10,7 @@ import {
 } from '@heroui/react';
 import { setCookie, getCookie } from 'cookies-next';
 import { useRouter } from 'next/navigation';
+import { LucideLanguages } from 'lucide-react';
 
 type LanguageOptionType = {
   key: string;
@@ -25,7 +26,7 @@ const languageOptions: LanguageOptionType[] = [
   },
   {
     key: 'kr',
-    value: 'Korean',
+    value: '한국어',
     name: 'KR',
   },
 ];
@@ -40,7 +41,7 @@ const LanguageDropdown = () => {
       language => language.key === localeCookie?.valueOf()
     );
     setLocale(storedLanguage || languageOptions[0]);
-  }, []);
+  }, [localeCookie]);
 
   // set locale cookie
   useEffect(() => {
@@ -48,7 +49,7 @@ const LanguageDropdown = () => {
 
     setCookie('locale', locale?.key, { path: '/', maxAge: 60 * 60 * 24 * 30 });
     router.refresh();
-  }, [locale]);
+  }, [locale, router]);
 
   const handleLanguageChange = (language: LanguageOptionType) => {
     setLocale(language);
@@ -65,7 +66,7 @@ const LanguageDropdown = () => {
           size="md"
         >
           <span className="flex items-center font-semibold justify-center">
-            {locale?.name}
+            <LucideLanguages />
           </span>
         </Button>
       </DropdownTrigger>
@@ -73,7 +74,9 @@ const LanguageDropdown = () => {
         {languageOptions.map(language => (
           <DropdownItem
             key={language.key}
-            className="text-white"
+            classNames={{
+              title: 'text-white hover:text-white',
+            }}
             startContent={
               <span className="w-8 h-8 rounded-full flex items-center font-semibold bg-shark-50 text-tanhide-500 justify-center">
                 {language.name}
