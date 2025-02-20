@@ -1,13 +1,67 @@
 {
   "Navigation": {
-    "Home": "Home",
-    "About": "About",
-    "Contact": "Contact"
+    "chat": "Chat",
+    "about": "About",
+    "contact": "Contact"
   },
   "ChatbotInterface": {
     "name": "Jeonghamsu",
-    "description": "Jeonghamsu the hamster at your service!",
+    "departmentName": "Department of Information Security Cryptography and Mathematics",
+    "description": "Your adorable guide!",
     "placeholder": "What do you want to know?",
-    "sendButton": "Send"
+    "sendButton": "Send",
+    "waitingMessage": "Please wait..."
+  },
+
+  "About": {
+    "hero": {
+      "title": "Meet Jeonghamsu",
+      "subtitle": "Your Helpful AI Assistant",
+      "description": "Jeonghamsu is a friendly AI chatbot designed and developed by the Department of Information Security Cryptography and Mathematics to assist students with course or school-related questions, scheduling, campus information, and administrative processes."
+    },
+
+    "mission": {
+      "title": "Our Mission",
+      "content": "To provide immediate, helpful, and personalized assistance to students, making school life easier by offering quick answers to everyday questions about campus services, events, and administrative procedures."
+    },
+    "language-support": {
+      "title": "Language Support",
+      "content": "Jeonghamsu supports multiple languages. Select your preferred language below."
+    },
+    "features": {
+      "title": "How Jeonghamsu Helps",
+      "item-1": {
+        "title": "Campus Navigation",
+        "description": "Information about building locations, office hours, and campus facilities."
+      },
+      "item-2": {
+        "title": "Administrative Support",
+        "description": "Guidance on registration processes, form submissions, and document requirements."
+      },
+      "item-3": {
+        "title": "Event Information",
+        "description": "Updates on school events, club activities, and important dates."
+      },
+      "item-4": {
+        "title": "FAQ Assistant",
+        "description": "Answers to commonly asked questions about school policies and procedures."
+      },
+      "item-5": {
+        "title": "Resource Locator",
+        "description": "Help finding the right department, service, or person to contact for specific needs."
+      }
+    },
+    "impact": {
+      "title": "School Impact",
+      "content": "Since its implementation, Jeonghamsu has significantly improved student experience by reducing wait times for information, providing 24/7 support for common questions, and helping students navigate campus life more efficiently."
+    },
+    "development": {
+      "title": "Continuous Improvement",
+      "content": "Jeonghamsu is constantly learning from interactions, expanding its knowledge of school resources, and refining its capabilities to better serve the evolving needs of our student community."
+    },
+    "contact": {
+      "title": "Access Jeonghamsu",
+      "content": "Students can access Jeonghamsu through the school portal, mobile application, or dedicated kiosks located throughout campus buildings."
+    }
   }
 }
