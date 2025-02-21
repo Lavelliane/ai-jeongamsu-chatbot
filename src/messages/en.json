@@ -10,7 +10,15 @@
     "description": "Your adorable guide!",
     "placeholder": "What do you want to know?",
     "sendButton": "Send",
-    "waitingMessage": "Please wait..."
+    "waitingMessage": "Please wait...",
+    "premadeQuestions": {
+      "title": "FAQ for CyberSecurity Department",
+      "question-1": "How do I apply?",
+      "question-2": "What are the prerequisites?",
+      "question-3": "Where is the department?",
+      "question-4": "What are the career opportunities?",
+      "question-5": "How can I get advising?"
+    }
   },
 
   "About": {

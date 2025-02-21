@@ -36,7 +36,7 @@ const Menubar = ({ tab, setTab }: MenubarProps) => {
     'transition-all duration-[450ms] ease-in-out bg-transparent scale-100 text-tanhide-100 hover:text-tanhide-500 hover:scale-[110%]';
 
   return (
-    <div className="w-full h-fit rounded-2xl bg-shark-900/80 z-20">
+    <div className="w-full h-fit md:rounded-2xl bg-shark-900/80 z-20">
       <div className="flex w-full h-full gap-2 justify-evenly p-0">
         {navItems.map(item => (
           <Button

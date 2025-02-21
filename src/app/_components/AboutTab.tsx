@@ -67,7 +67,7 @@ const AboutTab = () => {
           <h4>{t('mission.title')}</h4>
         </CardHeader>
         <CardBody>
-          <p>{t('mission.content')}</p>
+          <p className='max-w-64'>{t('mission.content')}</p>
         </CardBody>
       </Card>
       <div className="py-8 flex flex-col items-center gap-4 text-shark-900">
@@ -84,7 +84,7 @@ const AboutTab = () => {
           ))}
         </div>
       </div>
-      <Card className="bg-tanhide-500 text-shark-100 p-4 relative">
+      <Card className="w-full bg-tanhide-500 text-shark-100 p-4 relative">
         <LucideLanguages
           className="absolute top-0 right-1 text-tanhide-50"
           size={96}
@@ -93,7 +93,7 @@ const AboutTab = () => {
           <h4>{t('language-support.title')}</h4>
         </CardHeader>
         <CardBody>
-          <p>{t('language-support.content')}</p>
+          <p className='max-w-64'>{t('language-support.content')}</p>
         </CardBody>
       </Card>
       <div className="py-8 px-8 flex flex-col items-center gap-4 text-shark-900">
@@ -110,7 +110,7 @@ const AboutTab = () => {
           <br />
           Cryptography and Mathematics
         </p>
-        <Link href="https://cns.kookmin.ac.kr/cns/index.do">
+        <Link href="https://cns.kookmin.ac.kr/cns/index.do" target="_blank" rel="noopener noreferrer">
           https://cns.kookmin.ac.kr/cns/index.do
         </Link>
       </div>

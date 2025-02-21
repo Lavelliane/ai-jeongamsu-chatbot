@@ -17,10 +17,10 @@ import {
   Card,
 } from '@heroui/react';
 import LoadingDots from './LoadingDots';
-import { questions } from './PremadeQuestions';
 import Menubar from './Menubar';
 import AboutTab from './AboutTab';
 import ChatGuide from './ChatGuide';
+import usePremadeQuestions from '@/hooks/usePremadeQuestions';
 
 interface ChatbotInterfaceProps {
   handleChat: (input: string, sessionId: string) => Promise<string>;
@@ -45,6 +45,7 @@ const ChatbotInterface = ({
   const [isPending, startTransition] = useTransition();
   const searchParams = useSearchParams();
   const [tab, setTab] = useState('chat');
+  const questions = usePremadeQuestions();
 
   let sessionId = searchParams.get('session');
   const [client, setClient] = useState<boolean>(false);
@@ -239,7 +240,7 @@ const ChatbotInterface = ({
   return (
     <div className="flex h-full gap-2 justify-center">
       <audio ref={audioRef} />
-      <div className="flex flex-col gap-4 h-full w-full max-w-md">
+      <div className="flex flex-col md:gap-4 h-full w-full max-w-md">
         {/* Main container */}
         <div className="flex-1 w-full flex flex-col mx-auto z-10 bg-white/15 backdrop-blur-md md:rounded-xl overflow-hidden shadow-lg">
           {/* Header */}
@@ -276,16 +277,22 @@ const ChatbotInterface = ({
                 {messages.map(msg => (
                   <div key={msg.id} className="flex flex-col space-y-2">
                     <div className="flex justify-end gap-2 items-start">
-                      <p className="md:max-w-[70%] max-w-[60%] p-3 rounded-2xl bg-tanhide-500 text-shark-100">
-                        {msg.message}
-                      </p>
-                      <Image
-                        src={'/jeonghamsu-icons/4.svg'}
-                        isBlurred
-                        alt="message icon"
-                        width={36}
-                        height={36}
-                      />
+                      {
+                        msg.message && (
+                          <>
+                            <p className="md:max-w-[70%] max-w-[60%] p-3 rounded-2xl bg-tanhide-500 text-shark-100">
+                              {msg.message}
+                            </p>
+                            <Image
+                              src={'/jeonghamsu-icons/4.svg'}
+                              isBlurred
+                              alt="message icon"
+                              width={36}
+                              height={36}
+                            />
+                          </>
+                        )
+                      }
                     </div>
                     {msg.response && (
                       <div className="flex justify-start items-start gap-2">
@@ -296,12 +303,14 @@ const ChatbotInterface = ({
                           width={36}
                           height={36}
                         />
-                        <p
-                          className="md:max-w-[70%] max-w-[60%] p-3 rounded-2xl bg-shark-700/80 border border-shark-600 text-shark-100"
-                          dangerouslySetInnerHTML={{
-                            __html: marked.parse(msg.response),
-                          }}
-                        ></p>
+                        {msg.response && (
+                          <p
+                            className="md:max-w-[70%] max-w-[60%] p-3 rounded-2xl bg-shark-700/80 border border-shark-600 text-shark-100"
+                            dangerouslySetInnerHTML={{
+                              __html: marked.parse(msg.response),
+                            }}
+                          ></p>
+                        )}
                       </div>
                     )}
                   </div>
@@ -320,7 +329,7 @@ const ChatbotInterface = ({
                   shouldCloseOnScroll={true}
                   placement="right"
                   offset={0}
-                  crossOffset={-72}
+                  crossOffset={-96}
                   classNames={{
                     trigger: 'w-fit absolute bottom-20 left-4 z-20',
                     content: 'bg-transparent border-none shadow-none',

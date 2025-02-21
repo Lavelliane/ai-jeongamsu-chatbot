@@ -1,10 +1,19 @@
 import { NextResponse } from 'next/server';
 import { ElevenLabsClient } from "elevenlabs";
-
+import { enableAudio } from '@/flags/flags';
 const elevenLabsClient = new ElevenLabsClient();
 
 export async function POST(request: Request) {
   try {
+
+    const enableAudioFlag = await enableAudio();
+    if (!enableAudioFlag) {
+      return NextResponse.json(
+        { error: 'Audio is disabled' },
+        { status: 400 }
+      );
+    }
+
     const { text } = await request.json();
 
     if (!text) {
