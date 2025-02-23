@@ -21,6 +21,7 @@ import Menubar from './Menubar';
 import AboutTab from './AboutTab';
 import ChatGuide from './ChatGuide';
 import usePremadeQuestions from '@/hooks/usePremadeQuestions';
+import ContactTab from './ContactTab';
 
 interface ChatbotInterfaceProps {
   handleChat: (input: string, sessionId: string) => Promise<string>;
@@ -238,11 +239,11 @@ const ChatbotInterface = ({
   }
 
   return (
-    <div className="flex h-full gap-2 justify-center">
+    <div className="flex max-h-[1080px] h-full justify-center">
       <audio ref={audioRef} />
       <div className="flex flex-col md:gap-4 h-full w-full max-w-md">
         {/* Main container */}
-        <div className="flex-1 w-full flex flex-col mx-auto z-10 bg-white/15 backdrop-blur-md md:rounded-xl overflow-hidden shadow-lg">
+        <div className="flex-1 w-full flex flex-col mx-auto z-10 bg-white/15 backdrop-blur-md md:rounded-xl overflow-hidden md:shadow-lg">
           {/* Header */}
           <div className="flex bg-shark-900/80 border-b border-shark-700 h-20 px-4 items-center shadow-md">
             <div className="flex flex-1 items-center justify-between gap-4">
@@ -277,22 +278,20 @@ const ChatbotInterface = ({
                 {messages.map(msg => (
                   <div key={msg.id} className="flex flex-col space-y-2">
                     <div className="flex justify-end gap-2 items-start">
-                      {
-                        msg.message && (
-                          <>
-                            <p className="md:max-w-[70%] max-w-[60%] p-3 rounded-2xl bg-tanhide-500 text-shark-100">
-                              {msg.message}
-                            </p>
-                            <Image
-                              src={'/jeonghamsu-icons/4.svg'}
-                              isBlurred
-                              alt="message icon"
-                              width={36}
-                              height={36}
-                            />
-                          </>
-                        )
-                      }
+                      {msg.message && (
+                        <>
+                          <p className="md:max-w-[70%] max-w-[60%] p-3 rounded-2xl bg-tanhide-500 text-shark-100">
+                            {msg.message}
+                          </p>
+                          <Image
+                            src={'/jeonghamsu-icons/4.svg'}
+                            isBlurred
+                            alt="message icon"
+                            width={36}
+                            height={36}
+                          />
+                        </>
+                      )}
                     </div>
                     {msg.response && (
                       <div className="flex justify-start items-start gap-2">
@@ -408,6 +407,11 @@ const ChatbotInterface = ({
           {tab === 'about' && (
             <div className="flex-1 h-full overflow-y-auto p-4 space-y-4">
               <AboutTab />
+            </div>
+          )}
+          {tab === 'contact' && (
+            <div className="flex-1 h-full overflow-y-auto p-4 space-y-4">
+              <ContactTab />
             </div>
           )}
         </div>
