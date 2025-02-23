@@ -21,6 +21,14 @@
     }
   },
 
+  "Chat": {
+    "guide": {
+      "greeting": "Say Hi to Jeonghamsu!",
+      "askPrompt": "Ask anything or press",
+      "getStarted": "to get started."
+    }
+  },
+
   "About": {
     "hero": {
       "title": "Meet Jeonghamsu",
@@ -69,7 +77,60 @@
     },
     "contact": {
       "title": "Access Jeonghamsu",
-      "content": "Students can access Jeonghamsu through the school portal, mobile application, or dedicated kiosks located throughout campus buildings."
+      "content": "Students can access Jeonghamsu through web browsers or download Jeonghamsu in your devices."
     }
+  },
+
+  "Contact": {
+    "page": {
+      "title": "Contact Us",
+      "description": "Need help? Here's how to reach us"
+    },
+    "location": {
+      "title": "Find Us",
+      "building": "Building Name",
+      "room": "Room ###",
+      "mapLink": "Open in Naver Maps"
+    },
+    "office": {
+      "title": "Office Hours",
+      "regular": "Monday - Friday: 9:00 AM - 5:00 PM",
+      "lunch": "Lunch Break: 12:00 PM - 1:00 PM",
+      "consultation": {
+        "title": "Student Consultation Hours",
+        "hours": "2:00 PM - 4:00 PM",
+        "note": "* No appointment needed during these hours"
+      }
+    },
+    "department": {
+      "title": "Department Contacts",
+      "administrative": {
+        "title": "Administrative Office",
+        "note": "For general inquiries, documentation, and administrative support"
+      },
+      "student": {
+        "title": "Student Affairs",
+        "note": "For course registration, academic advice, and student support"
+      }
+    },
+    "emergency": {
+      "title": "Emergency Contact",
+      "available": "Available 24/7"
+    },
+    "support": {
+      "title": "Technical Support"
+    },
+    "report": {
+      "title": "Found an Issue?",
+      "description": "Report technical issues or suggest improvements",
+      "bug": "Report Bug",
+      "email": "Email Support"
+    }
+  },
+  "Footer": {
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": "Contact Us",
+    "department": "Department of Information Security, <br/> Cryptography and Mathematics"
   }
 }

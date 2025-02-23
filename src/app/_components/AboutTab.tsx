@@ -1,18 +1,13 @@
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  Divider,
-  Image,
-  Link,
-} from '@heroui/react';
+import { Card, CardBody, CardHeader, Divider, Image } from '@heroui/react';
 import {
   LucideBookOpen,
   LucideChartSpline,
   LucideLanguages,
+  LucideSearch,
 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import React from 'react';
+import Footer from './Footer';
 
 const AboutTab = () => {
   const t = useTranslations('About');
@@ -58,42 +53,42 @@ const AboutTab = () => {
       <h4>{t('hero.title')}</h4>
       <h6>{t('hero.subtitle')}</h6>
       <p className="text-center my-4">{t('hero.description')}</p>
-      <Card className="w-full mt-4 text-shark-100 bg-shark-900/60 p-4 relative">
+      <Card className="w-full mt-4 text-shark-100 bg-shark-900 p-4 relative">
         <LucideBookOpen
-          className="absolute top-0 right-1 text-shark-50"
-          size={84}
+          className="absolute top-0 right-2 text-shark-800"
+          size={200}
         />
         <CardHeader title={t('mission.title')}>
           <h4>{t('mission.title')}</h4>
         </CardHeader>
         <CardBody>
-          <p className='max-w-64'>{t('mission.content')}</p>
+          <p>{t('mission.content')}</p>
         </CardBody>
       </Card>
       <div className="py-8 flex flex-col items-center gap-4 text-shark-900">
         <h4>{t('features.title')}</h4>
         <div className="flex flex-col gap-2">
           {features.map((key, index) => (
-            <>
+            <div key={key} className="flex flex-col gap-2">
               {index !== 0 && <Divider className="bg-shark-300" />}
-              <p key={key} className="px-2">
+              <p className="px-2">
                 {t(`features.${key}.title`)} ({t(`features.${key}.description`)}
                 )
               </p>
-            </>
+            </div>
           ))}
         </div>
       </div>
       <Card className="w-full bg-tanhide-500 text-shark-100 p-4 relative">
         <LucideLanguages
           className="absolute top-0 right-1 text-tanhide-50"
-          size={96}
+          size={110}
         />
-        <CardHeader title={t('LanguageSupport.title')}>
+        <CardHeader title={t('language-support.title')}>
           <h4>{t('language-support.title')}</h4>
         </CardHeader>
         <CardBody>
-          <p className='max-w-64'>{t('language-support.content')}</p>
+          <p className="max-w-48">{t('language-support.content')}</p>
         </CardBody>
       </Card>
       <div className="py-8 px-8 flex flex-col items-center gap-4 text-shark-900">
@@ -103,26 +98,19 @@ const AboutTab = () => {
           <p className="text-center">{t('development.content')}</p>
         </div>
       </div>
-      <div className="py-8 flex flex-col items-center text-center gap-4 text-shark-900">
-        <p>Copyright © {new Date().getFullYear()}</p>
-        <p>
-          Department of Information Security,
-          <br />
-          Cryptography and Mathematics
-        </p>
-        <Link href="https://cns.kookmin.ac.kr/cns/index.do" target="_blank" rel="noopener noreferrer">
-          https://cns.kookmin.ac.kr/cns/index.do
-        </Link>
-      </div>
-      <div className="flex justify-center gap-4">
-        <Image
-          loading="eager"
-          src="/kookmin-logo.png"
-          alt="kookmin-university-logo"
-          width={64}
-          height={64}
+      <Card className="w-full mt-4 text-shark-100 bg-shark-900/60 p-4 relative">
+        <LucideSearch
+          className="absolute top-0 right-2 text-shark-500"
+          size={140}
         />
-      </div>
+        <CardHeader title={t('contact.title')}>
+          <h4>{t('contact.title')}</h4>
+        </CardHeader>
+        <CardBody>
+          <p>{t('contact.content')}</p>
+        </CardBody>
+      </Card>
+      <Footer />
     </div>
   );
 };

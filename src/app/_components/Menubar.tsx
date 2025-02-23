@@ -31,13 +31,13 @@ const Menubar = ({ tab, setTab }: MenubarProps) => {
   ];
 
   const selected =
-    'transition-all duration-[450ms] ease-in-out bg-tanhide-500 scale-[110%] shadow-lg shadow-black/15';
+    'transition-all duration-[450ms] ease-in-out bg-tanhide-500 md:scale-[110%] shadow-lg shadow-black/15';
   const idle =
-    'transition-all duration-[450ms] ease-in-out bg-transparent scale-100 text-tanhide-100 hover:text-tanhide-500 hover:scale-[110%]';
+    'transition-all duration-[450ms] ease-in-out bg-transparent text-tanhide-100 hover:text-tanhide-500 md:scale-100 md:hover:scale-[110%]';
 
   return (
     <div className="w-full h-fit md:rounded-2xl bg-shark-900/80 z-20">
-      <div className="flex w-full h-full gap-2 justify-evenly p-0">
+      <div className="flex w-full h-full gap-2 justify-evenly md:py-0 py-2">
         {navItems.map(item => (
           <Button
             onPress={() => setTab(item.value)}
