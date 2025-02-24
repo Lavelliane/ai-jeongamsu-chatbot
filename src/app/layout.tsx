@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { NextIntlClientProvider } from 'next-intl';
@@ -18,6 +18,15 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Jeonghamsu',
   description: 'Jeonghamsu | Department of Cyber Security Chatbot',
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  // Also supported but less commonly used
+  // interactiveWidget: 'resizes-visual',
 };
 
 export default async function RootLayout({
