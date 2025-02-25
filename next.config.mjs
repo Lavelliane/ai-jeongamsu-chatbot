@@ -36,7 +36,7 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self'",
+            value: "default-src 'self'; script-src 'self'; frame-ancestors 'self' https://cns.kookmin.ac.kr https://cms.kookmin.ac.kr;",
           },
         ],
       },
