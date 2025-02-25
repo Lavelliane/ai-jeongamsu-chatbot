@@ -15,7 +15,7 @@ const nextConfig = {
           },
           {
             key: 'X-Frame-Options',
-            value: 'DENY',
+            value: 'ALLOW',
           },
           {
             key: 'Referrer-Policy',
@@ -36,7 +36,7 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self'; frame-ancestors 'self' https://cns.kookmin.ac.kr https://cms.kookmin.ac.kr;",
+            value: "default-src 'self'; script-src 'self'; frame-ancestors 'self' *.kookmin.ac.kr; ",
           },
         ],
       },
