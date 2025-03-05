@@ -37,14 +37,14 @@ const ContactTab = () => {
       sections: [
         {
           title: t('department.administrative.title'),
-          email: 'admin@department.edu',
-          phone: '+82-2-XXX-XXXX',
+          email: t('department.administrative.email'),
+          phone: t('department.administrative.phone'),
           note: t('department.administrative.note'),
         },
         {
           title: t('department.student.title'),
-          email: 'students@department.edu',
-          phone: '+82-2-XXX-XXXX',
+          email: t('department.student.email'),
+          phone: t('department.student.phone'),
           note: t('department.student.note'),
         },
       ],
@@ -55,11 +55,11 @@ const ContactTab = () => {
       content: [
         {
           label: t('emergency.title'),
-          value: `+82-2-XXX-XXXX (${t('emergency.available')})`,
+          value: `${t('emergency.phone')} (${t('emergency.available')})`,
         },
         {
           label: t('support.title'),
-          value: 'support@department.edu',
+          value: `${t('support.email')}`,
         },
       ],
     },
@@ -98,12 +98,10 @@ const ContactTab = () => {
                 <h6 className="text-shark-200">
                   {t('location.building')}, {t('location.room')}
                 </h6>
-                <p className="text-shark-200">
-                  77 Jeongneung-ro, Seongbuk-gu, Seoul
-                </p>
+                <p className="text-shark-200">{t('location.address')}</p>
               </div>
               <a
-                href="https://map.naver.com"
+                href="https://map.naver.com/p/search/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%20%EC%84%9C%EC%9A%B8%20%EC%84%B1%EB%B6%81%EA%B5%AC%20%EC%A0%95%EB%A6%89%EB%A1%9C%2077/address/14137230.507491,4524591.3709831,%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%84%B1%EB%B6%81%EA%B5%AC%20%EC%A0%95%EB%A6%89%EB%A1%9C%2077,new?c=16.00,0,0,0,dh&isCorrectAnswer=true"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-shark-800 hover:bg-shark-700 text-shark-100 px-4 py-2 rounded-md w-fit"
@@ -215,16 +213,7 @@ const ContactTab = () => {
               <p className="text-tanhide-100">{t('report.description')}</p>
               <div className="flex flex-col gap-4">
                 <Link
-                  href="https://github.com/your-repo/issues"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 border-white bg-white hover:bg-white/80 rounded-lg"
-                >
-                  <Bug className="w-4 h-4" />
-                  {t('report.bug')}
-                </Link>
-                <Link
-                  href="mailto:support@department.edu"
+                  href={`mailto:${t('report.email')}`}
                   className="flex items-center gap-2 px-4 py-2 border-white bg-white hover:bg-white/80 rounded-lg"
                 >
                   <Mail className="w-4 h-4" />

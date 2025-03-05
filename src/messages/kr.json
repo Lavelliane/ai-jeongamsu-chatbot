@@ -90,6 +90,7 @@
       "title": "찾아오시는 길",
       "building": "건물명",
       "room": "강의실 ###",
+      "address": "대한민국 서울 성북구 정릉로 77",
       "mapLink": "네이버 지도에서 보기"
     },
     "office": {
@@ -106,19 +107,25 @@
       "title": "학과 연락처",
       "administrative": {
         "title": "행정실",
+        "email": "email here please",
+        "phone": "phone here please",
         "note": "일반 문의, 서류 발급, 행정 지원"
       },
       "student": {
         "title": "학생 지원",
+        "email": "email here please",
+        "phone": "phone here please",
         "note": "수강 신청, 학업 상담, 학생 지원"
       }
     },
     "emergency": {
       "title": "긴급 연락처",
+      "phone": "전화번호",
       "available": "24시간 이용 가능"
     },
     "support": {
-      "title": "기술 지원"
+      "title": "기술 지원",
+      "email": "email here please"
     },
     "report": {
       "title": "문제가 발견되셨나요?",

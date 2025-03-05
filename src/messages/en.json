@@ -5,9 +5,9 @@
     "contact": "Contact"
   },
   "ChatbotInterface": {
-    "name": "JeongAmSu",
+    "name": "Jeongamsu",
     "departmentName": "Department of Information Security and Cryptographic Mathematics",
-    "description": "Your friendly JeongAmSu guide!",
+    "description": "Your friendly Jeongamsu guide!",
     "placeholder": "What would you like to know?",
     "sendButton": "Send",
     "waitingMessage": "Please wait a moment...",
@@ -23,7 +23,7 @@
 
   "Chat": {
     "guide": {
-      "greeting": "Start a conversation with JeongAmSu!",
+      "greeting": "Start a conversation with Jeongamsu!",
       "askPrompt": "Ask your questions or",
       "getStarted": "Press the button to get started."
     }
@@ -31,9 +31,9 @@
 
   "About": {
     "hero": {
-      "title": "Meet JeongAmSu",
+      "title": "Meet Jeongamsu",
       "subtitle": "Your Friendly AI Assistant",
-      "description": "JeongAmSu is a friendly AI chatbot developed by the Department of Information Security and Cryptographic Mathematics, designed to help students with questions about the department, classes, schedules, campus information, and administrative procedures."
+      "description": "Jeongamsu is a friendly AI chatbot developed by the Department of Information Security and Cryptographic Mathematics, designed to help students with questions about the department, classes, schedules, campus information, and administrative procedures."
     },
 
     "mission": {
@@ -42,10 +42,10 @@
     },
     "language-support": {
       "title": "Language Support",
-      "content": "JeongAmSu supports multiple languages. Select your preferred language below."
+      "content": "Jeongamsu supports multiple languages. Select your preferred language below."
     },
     "features": {
-      "title": "How JeongAmSu Can Help You",
+      "title": "How Jeongamsu Can Help You",
       "item-1": {
         "title": "Campus Navigation",
         "description": "Provides information on building locations, office hours, and campus facilities."
@@ -69,15 +69,15 @@
     },
     "impact": {
       "title": "Impact on the School",
-      "content": "Since introducing JeongAmSu, students' wait times for information searches have decreased, and 24-hour responses to questions have become possible, making campus life much more convenient."
+      "content": "Since introducing Jeongamsu, students' wait times for information searches have decreased, and 24-hour responses to questions have become possible, making campus life much more convenient."
     },
     "development": {
       "title": "Continuous Development",
-      "content": "JeongAmSu continuously learns through interactions with students, expanding its knowledge of school resources and improving features to meet the changing needs of students."
+      "content": "Jeongamsu continuously learns through interactions with students, expanding its knowledge of school resources and improving features to meet the changing needs of students."
     },
     "contact": {
-      "title": "Using JeongAmSu",
-      "content": "You can use JeongAmSu through your web browser or download JeongAmSu to your device to use it anytime."
+      "title": "Using Jeongamsu",
+      "content": "You can use Jeongamsu through your web browser or download Jeongamsu to your device to use it anytime."
     }
   },
 
@@ -90,6 +90,7 @@
       "title": "How to Find Us",
       "building": "Building Name",
       "room": "Room ###",
+      "address": "77 Jeongneung-ro, Seongbuk District, Seoul",
       "mapLink": "View on Naver Maps"
     },
     "office": {
@@ -106,19 +107,25 @@
       "title": "Department Contact",
       "administrative": {
         "title": "Administrative Office",
+        "email": "Email",
+        "phone": "Phone",
         "note": "General inquiries, document issuance, administrative support"
       },
       "student": {
         "title": "Student Support",
+        "email": "Email",
+        "phone": "Phone",
         "note": "Course registration, academic counseling, student support"
       }
     },
     "emergency": {
       "title": "Emergency Contact",
+      "phone": "Phone Number",
       "available": "Available 24 hours"
     },
     "support": {
-      "title": "Technical Support"
+      "title": "Technical Support",
+      "email": "Email"
     },
     "report": {
       "title": "Found an issue?",
