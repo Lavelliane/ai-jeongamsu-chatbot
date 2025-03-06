@@ -14,7 +14,6 @@ import {
   Bug,
   MapPin,
   Clock,
-  Users,
   CalendarClock,
   Navigation,
   LucideUser,
@@ -29,41 +28,6 @@ const ContactTab = () => {
     lunch: t('office.lunch'),
     consultation: t('office.consultation.hours'),
   };
-
-  const contactInfo = [
-    {
-      icon: <Users className="w-6 h-6 text-shark-100" />,
-      title: t('department.title'),
-      sections: [
-        {
-          title: t('department.administrative.title'),
-          email: t('department.administrative.email'),
-          phone: t('department.administrative.phone'),
-          note: t('department.administrative.note'),
-        },
-        {
-          title: t('department.student.title'),
-          email: t('department.student.email'),
-          phone: t('department.student.phone'),
-          note: t('department.student.note'),
-        },
-      ],
-    },
-    {
-      icon: <Mail className="w-6 h-6 text-shark-100" />,
-      title: 'Quick Contact',
-      content: [
-        {
-          label: t('emergency.title'),
-          value: `${t('emergency.phone')} (${t('emergency.available')})`,
-        },
-        {
-          label: t('support.title'),
-          value: `${t('support.email')}`,
-        },
-      ],
-    },
-  ];
 
   return (
     <div className="flex flex-col gap-4 items-center justify-start p-4 min-h-screen">
@@ -101,13 +65,13 @@ const ContactTab = () => {
                 <p className="text-shark-200">{t('location.address')}</p>
               </div>
               <a
-                href="https://map.naver.com/p/search/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%20%EC%84%9C%EC%9A%B8%20%EC%84%B1%EB%B6%81%EA%B5%AC%20%EC%A0%95%EB%A6%89%EB%A1%9C%2077/address/14137230.507491,4524591.3709831,%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%84%B1%EB%B6%81%EA%B5%AC%20%EC%A0%95%EB%A6%89%EB%A1%9C%2077,new?c=16.00,0,0,0,dh&isCorrectAnswer=true"
+                href={t('location.mapLink')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-shark-800 hover:bg-shark-700 text-shark-100 px-4 py-2 rounded-md w-fit"
               >
                 <Navigation className="w-4 h-4" />
-                {t('location.mapLink')}
+                {t('location.viewMap')}
               </a>
             </div>
           </CardBody>
@@ -147,60 +111,57 @@ const ContactTab = () => {
         </Card>
 
         {/* Contact Directory */}
-        {contactInfo && (
-          <>
-            <Card className="w-full bg-shark-900/80 text-shark-100 relative p-4 overflow-hidden">
-              <div className="absolute top-0 right-0 text-shark-500">
-                <LucideUser size={160} />
-              </div>
-              <CardHeader className="flex flex-row items-center gap-2">
-                <LucideUser className="w-8 h-8 text-shark-100" />
-                <h4>{t('department.title')}</h4>
-              </CardHeader>
-              <CardBody>
-                <div className="flex flex-col gap-4">
-                  {contactInfo[0].sections?.map((section, index) => (
-                    <div key={index} className="relative z-10 flex flex-col">
-                      <h6 className="font-semibold mb-2">{section.title}</h6>
-                      <div className="flex flex-col gap-2 text-shark-200">
-                        <div className="flex items-center gap-2">
-                          <Mail className="w-4 h-4" />
-                          <h6>{section.email}</h6>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Phone className="w-4 h-4" />
-                          <h6>{section.phone}</h6>
-                        </div>
-                        <p className="text-shark-300 mt-1">{section.note}</p>
-                      </div>
-                      {index === 0 && <Divider className="bg-shark-200 mt-4" />}
-                    </div>
-                  ))}
-                </div>
-              </CardBody>
-            </Card>
-
-            {/* Quick Contact Info */}
-            <div className="flex flex-col">
-              <Card className="bg-transparent border shadow-none items-center text-shark-600 p-4">
-                <Image
-                  src={'/jeonghamsu-icons/10.svg'}
-                  alt={'contact-us-icon'}
-                  isBlurred
-                  className="w-16"
-                />
-                {contactInfo[1].content?.map((item, index) => (
-                  <div key={index}>
-                    <CardBody className="flex flex-col items-center gap-2">
-                      <h5>{item.label}</h5>
-                      <p className="text-shark-400">{item.value}</p>
-                    </CardBody>
+        <Card className="w-full bg-shark-900/80 text-shark-100 relative p-4 overflow-hidden">
+          <div className="absolute top-0 right-0 text-shark-500">
+            <LucideUser size={160} />
+          </div>
+          <CardHeader className="flex flex-row items-center gap-2">
+            <LucideUser className="w-8 h-8 text-shark-100" />
+            <h4>{t('department.title')}</h4>
+          </CardHeader>
+          <CardBody>
+            <div className="flex flex-col gap-4">
+              <div className="relative z-10 flex flex-col">
+                <h6 className="font-semibold mb-2">
+                  {t('department.administrative.title')}
+                </h6>
+                <div className="flex flex-col gap-2 text-shark-200">
+                  <div className="flex items-center gap-2">
+                    <Mail className="w-4 h-4" />
+                    <h6>{t('department.administrative.email')}</h6>
                   </div>
-                ))}
-              </Card>
+                  <div className="flex items-center gap-2">
+                    <Mail className="w-4 h-4" />
+                    <h6>{t('department.administrative.email-2')}</h6>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Phone className="w-4 h-4" />
+                    <h6>{t('department.administrative.phone')}</h6>
+                  </div>
+                  <p className="text-shark-300 mt-1">
+                    {t('department.administrative.note')}
+                  </p>
+                </div>
+                <Divider className="bg-shark-200 mt-4" />
+              </div>
+
+              <div className="relative z-10 flex flex-col">
+                <h6 className="font-semibold mb-2">
+                  {t('department.student.title')}
+                </h6>
+                <div className="flex flex-col gap-2 text-shark-200">
+                  <div className="flex items-center gap-2">
+                    <Mail className="w-4 h-4" />
+                    <h6>{t('department.student.email')}</h6>
+                  </div>
+                  <p className="text-shark-300 mt-1">
+                    {t('department.student.note')}
+                  </p>
+                </div>
+              </div>
             </div>
-          </>
-        )}
+          </CardBody>
+        </Card>
 
         {/* Report Issues Section */}
         <Card className="w-full bg-tanhide-500 text-tanhide-100 p-4 relative overflow-hidden">

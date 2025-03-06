@@ -6,13 +6,13 @@
   },
   "ChatbotInterface": {
     "name": "Jeongamsu",
-    "departmentName": "Department of Information Security and Cryptographic Mathematics",
+    "departmentName": "Department of Information Security, Cryptography and Mathematics",
     "description": "Your friendly Jeongamsu guide!",
     "placeholder": "What would you like to know?",
     "sendButton": "Send",
     "waitingMessage": "Please wait a moment...",
     "premadeQuestions": {
-      "title": "Department of Information Security and Cryptographic Mathematics FAQ",
+      "title": "Department of Information Security, Cryptography and Mathematics FAQ",
       "question-1": "How do I apply for admission?",
       "question-2": "What are the prerequisites?",
       "question-3": "Where is the department located?",
@@ -33,7 +33,7 @@
     "hero": {
       "title": "Meet Jeongamsu",
       "subtitle": "Your Friendly AI Assistant",
-      "description": "Jeongamsu is a friendly AI chatbot developed by the Department of Information Security and Cryptographic Mathematics, designed to help students with questions about the department, classes, schedules, campus information, and administrative procedures."
+      "description": "Jeongamsu is a friendly AI chatbot developed by the Department of Information Security, Cryptography and Mathematics, designed to help students with questions about the department, classes, schedules, campus information, and administrative procedures."
     },
 
     "mission": {
@@ -88,10 +88,11 @@
     },
     "location": {
       "title": "How to Find Us",
-      "building": "Building Name",
-      "room": "Room ###",
+      "building": "Science Building",
+      "room": "Room 101",
       "address": "77 Jeongneung-ro, Seongbuk District, Seoul",
-      "mapLink": "View on Naver Maps"
+      "viewMap": "View on Naver Maps",
+      "mapLink": "https://naver.me/xCBQdqAR"
     },
     "office": {
       "title": "Office Hours",
@@ -107,25 +108,25 @@
       "title": "Department Contact",
       "administrative": {
         "title": "Administrative Office",
-        "email": "Email",
-        "phone": "Phone",
+        "email": "math4740@kookmin.ac.kr",
+        "email-2": "wnsgml3508@kookmin.ac.kr",
+        "phone": "+82-2-910-4740",
         "note": "General inquiries, document issuance, administrative support"
       },
       "student": {
         "title": "Student Support",
-        "email": "Email",
-        "phone": "Phone",
+        "email": "kmu.gaon2025@gamil.com",
         "note": "Course registration, academic counseling, student support"
       }
     },
     "emergency": {
       "title": "Emergency Contact",
-      "phone": "Phone Number",
+      "phone": "+82-2-910-4740",
       "available": "Available 24 hours"
     },
     "support": {
       "title": "Technical Support",
-      "email": "Email"
+      "email": "math4740@kookmin.ac.kr"
     },
     "report": {
       "title": "Found an issue?",
@@ -139,6 +140,6 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
     "contact": "Contact Us",
-    "department": "Department of Information Security and Cryptographic Mathematics"
+    "department": "Department of Information Security, Cryptography and Mathematics"
   }
 }
