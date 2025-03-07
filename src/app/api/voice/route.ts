@@ -1,8 +1,6 @@
 import { NextResponse } from 'next/server';
 import { ElevenLabsClient } from "elevenlabs";
 import { enableAudio } from '@/flags/flags';
-const elevenLabsClient = new ElevenLabsClient();
-
 export async function POST(request: Request) {
   try {
 
@@ -13,6 +11,9 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
+    
+    const elevenLabsClient = new ElevenLabsClient();
+
 
     const { text } = await request.json();
 
