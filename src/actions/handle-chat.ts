@@ -2,7 +2,8 @@
 
 import { createClient } from '@/lib/db/server';
 import { ChatOpenAI } from "@langchain/openai";
-import { promptContextEnglish, promptContextKorean } from '@/constants/prompt';
+import { promptContextEnglish } from '@/constants/prompt';
+
 export async function handleChat(input: string, sessionId: string) {
   const supabase = await createClient();
   const model = new ChatOpenAI({ model: 'gpt-4o-mini', temperature: 0.5 });
