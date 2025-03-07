@@ -5,14 +5,14 @@
     "contact": "문의"
   },
   "ChatbotInterface": {
-    "name": "정암수",
-    "departmentName": "정보보안암호수학과",
-    "description": "친절한 정암수 안내자!",
+    "name": "정함수",
+    "departmentName": "정보보호암호수학과",
+    "description": "당신의 사랑스러운 안내자!",
     "placeholder": "무엇을 알고 싶으신가요?",
     "sendButton": "보내기",
     "waitingMessage": "잠시만 기다려주세요...",
     "premadeQuestions": {
-      "title": "정보보안암호수학과 FAQ",
+      "title": "정보보호학과 FAQ",
       "question-1": "입학은 어떻게 하나요?",
       "question-2": "필수 조건은 무엇인가요?",
       "question-3": "학과 위치는 어디인가요?",
@@ -23,7 +23,7 @@
 
   "Chat": {
     "guide": {
-      "greeting": "정암수와 대화를 시작해보세요!",
+      "greeting": "정함수와 대화를 시작해보세요!",
       "askPrompt": "궁금한 점을 물어보시거나",
       "getStarted": "버튼을 눌러 시작하세요."
     }
@@ -31,9 +31,9 @@
 
   "About": {
     "hero": {
-      "title": "정암수를 만나보세요",
+      "title": "정함수를 만나보세요",
       "subtitle": "당신의 친절한 AI 도우미",
-      "description": "정암수는 정보보안암호수학과에서 개발한 친절한 AI 챗봇으로, 학생들이 학과, 수업, 일정, 캠퍼스 정보 및 행정 절차에 대한 질문에 도움을 받을 수 있도록 설계되었습니다."
+      "description": "정함수는 정보보호암호수학과에서 개발한 친절한 AI 챗봇으로, 학생들이 학과, 수업, 일정, 캠퍼스 정보 및 행정 절차에 대한 질문에 도움을 받을 수 있도록 설계되었습니다."
     },
 
     "mission": {
@@ -42,10 +42,10 @@
     },
     "language-support": {
       "title": "언어 지원",
-      "content": "정암수는 여러 언어를 지원합니다. 아래에서 원하는 언어를 선택하세요."
+      "content": "정함수는 여러 언어를 지원합니다. 아래에서 원하는 언어를 선택하세요."
     },
     "features": {
-      "title": "정암수가 도와드리는 방법",
+      "title": "정함수가 도와드리는 방법",
       "item-1": {
         "title": "캠퍼스 길찾기",
         "description": "건물 위치, 사무실 운영 시간 및 캠퍼스 시설 정보를 제공합니다."
@@ -69,15 +69,15 @@
     },
     "impact": {
       "title": "학교에 미치는 영향",
-      "content": "정암수 도입 이후, 학생들의 정보 탐색 대기 시간이 줄어들고, 24시간 질문에 대한 응답이 가능해지면서 학교 생활이 훨씬 편리해졌습니다."
+      "content": "정함수 도입 이후, 학생들의 정보 탐색 대기 시간이 줄어들고, 24시간 질문에 대한 응답이 가능해지면서 학교 생활이 훨씬 편리해졌습니다."
     },
     "development": {
       "title": "지속적인 발전",
-      "content": "정암수는 학생들과의 상호작용을 통해 지속적으로 학습하며, 학교 자원에 대한 지식을 확장하고 기능을 개선하여 학생들의 변화하는 요구에 맞춰 나아가고 있습니다."
+      "content": "정함수는 학생들과의 상호작용을 통해 지속적으로 학습하며, 학교 자원에 대한 지식을 확장하고 기능을 개선하여 학생들의 변화하는 요구에 맞춰 나아가고 있습니다."
     },
     "contact": {
-      "title": "정암수 이용하기",
-      "content": "웹 브라우저를 통해 정암수를 이용하거나, 기기에 정암수를 다운로드하여 언제든지 이용할 수 있습니다."
+      "title": "정함수 이용하기",
+      "content": "웹 브라우저를 통해 정함수를 이용하거나, 기기에 정함수를 다운로드하여 언제든지 이용할 수 있습니다."
     }
   },
 
@@ -88,11 +88,9 @@
     },
     "location": {
       "title": "찾아오시는 길",
-      "building": "과학관",
-      "room": "101호",
-      "address": "대한민국 서울 성북구 정릉로 77",
-      "viewMap": "네이버 지도에서 보기",
-      "mapLink": "https://naver.me/xCBQdqAR"
+      "building": "건물명",
+      "room": "강의실 ###",
+      "mapLink": "네이버 지도에서 보기"
     },
     "office": {
       "title": "업무 시간",
@@ -101,32 +99,26 @@
       "consultation": {
         "title": "학생 상담 시간",
         "hours": "오후 2:00 - 오후 4:00",
-        "note": "* 상담 시간 내 사전 예약 및 조율 필수 *"
+        "note": "* 상담 시간 내 예약 없이 방문 가능"
       }
     },
     "department": {
       "title": "학과 연락처",
       "administrative": {
         "title": "행정실",
-        "email": "math4740@kookmin.ac.kr",
-        "email-2": "wnsgml3508@kookmin.ac.kr",
-        "phone": "+82-2-910-4740",
         "note": "일반 문의, 서류 발급, 행정 지원"
       },
       "student": {
         "title": "학생 지원",
-        "email": "kmu.gaon2025@gamil.com",
         "note": "수강 신청, 학업 상담, 학생 지원"
       }
     },
     "emergency": {
       "title": "긴급 연락처",
-      "phone": "+82-2-910-4740",
       "available": "24시간 이용 가능"
     },
     "support": {
-      "title": "기술 지원",
-      "email": "math4740@kookmin.ac.kr"
+      "title": "기술 지원"
     },
     "report": {
       "title": "문제가 발견되셨나요?",
@@ -140,6 +132,6 @@
     "privacy": "개인정보처리방침",
     "terms": "이용약관",
     "contact": "문의하기",
-    "department": "정보보안안암호수학과"
+    "department": "정보보호암호수학과"
   }
 }

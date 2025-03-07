@@ -5,132 +5,141 @@
     "contact": "Contact"
   },
   "ChatbotInterface": {
-    "name": "Jeonghamsu",
-    "departmentName": "Department of Information Security Cryptography and Mathematics",
-    "description": "Your adorable guide!",
-    "placeholder": "What do you want to know?",
+    "name": "Jeongamsu",
+    "departmentName": "Department of Information Security, Cryptography and Mathematics",
+    "description": "Your friendly Jeongamsu guide!",
+    "placeholder": "What would you like to know?",
     "sendButton": "Send",
-    "waitingMessage": "Please wait...",
+    "waitingMessage": "Please wait a moment...",
     "premadeQuestions": {
-      "title": "FAQ for CyberSecurity Department",
-      "question-1": "How do I apply?",
+      "title": "Department of Information Security, Cryptography and Mathematics FAQ",
+      "question-1": "How do I apply for admission?",
       "question-2": "What are the prerequisites?",
-      "question-3": "Where is the department?",
-      "question-4": "What are the career opportunities?",
-      "question-5": "How can I get advising?"
+      "question-3": "Where is the department located?",
+      "question-4": "What are the career paths after graduation?",
+      "question-5": "How can I get academic counseling?"
     }
   },
 
   "Chat": {
     "guide": {
-      "greeting": "Say Hi to Jeonghamsu!",
-      "askPrompt": "Ask anything or press",
-      "getStarted": "to get started."
+      "greeting": "Start a conversation with Jeongamsu!",
+      "askPrompt": "Ask your questions or",
+      "getStarted": "Press the button to get started."
     }
   },
 
   "About": {
     "hero": {
-      "title": "Meet Jeonghamsu",
-      "subtitle": "Your Helpful AI Assistant",
-      "description": "Jeonghamsu is a friendly AI chatbot designed and developed by the Department of Information Security Cryptography and Mathematics to assist students with course or school-related questions, scheduling, campus information, and administrative processes."
+      "title": "Meet Jeongamsu",
+      "subtitle": "Your Friendly AI Assistant",
+      "description": "Jeongamsu is a friendly AI chatbot developed by the Department of Information Security, Cryptography and Mathematics, designed to help students with questions about the department, classes, schedules, campus information, and administrative procedures."
     },
 
     "mission": {
       "title": "Our Mission",
-      "content": "To provide immediate, helpful, and personalized assistance to students, making school life easier by offering quick answers to everyday questions about campus services, events, and administrative procedures."
+      "content": "Our goal is to help students receive quick and accurate answers to everyday questions about campus services, events, and administrative procedures, making campus life more convenient."
     },
     "language-support": {
       "title": "Language Support",
-      "content": "Jeonghamsu supports multiple languages. Select your preferred language below."
+      "content": "Jeongamsu supports multiple languages. Select your preferred language below."
     },
     "features": {
-      "title": "How Jeonghamsu Helps",
+      "title": "How Jeongamsu Can Help You",
       "item-1": {
         "title": "Campus Navigation",
-        "description": "Information about building locations, office hours, and campus facilities."
+        "description": "Provides information on building locations, office hours, and campus facilities."
       },
       "item-2": {
         "title": "Administrative Support",
-        "description": "Guidance on registration processes, form submissions, and document requirements."
+        "description": "Offers guidance on course registration, document submission, and administrative procedures."
       },
       "item-3": {
         "title": "Event Information",
-        "description": "Updates on school events, club activities, and important dates."
+        "description": "Informs you about school events, club activities, and important schedules."
       },
       "item-4": {
-        "title": "FAQ Assistant",
-        "description": "Answers to commonly asked questions about school policies and procedures."
+        "title": "FAQ Helper",
+        "description": "Answers frequently asked questions about school policies and procedures."
       },
       "item-5": {
-        "title": "Resource Locator",
-        "description": "Help finding the right department, service, or person to contact for specific needs."
+        "title": "Resource Finder",
+        "description": "Helps you easily find the departments, services, or contacts you need."
       }
     },
     "impact": {
-      "title": "School Impact",
-      "content": "Since its implementation, Jeonghamsu has significantly improved student experience by reducing wait times for information, providing 24/7 support for common questions, and helping students navigate campus life more efficiently."
+      "title": "Impact on the School",
+      "content": "Since introducing Jeongamsu, students' wait times for information searches have decreased, and 24-hour responses to questions have become possible, making campus life much more convenient."
     },
     "development": {
-      "title": "Continuous Improvement",
-      "content": "Jeonghamsu is constantly learning from interactions, expanding its knowledge of school resources, and refining its capabilities to better serve the evolving needs of our student community."
+      "title": "Continuous Development",
+      "content": "Jeongamsu continuously learns through interactions with students, expanding its knowledge of school resources and improving features to meet the changing needs of students."
     },
     "contact": {
-      "title": "Access Jeonghamsu",
-      "content": "Students can access Jeonghamsu through web browsers or download Jeonghamsu in your devices."
+      "title": "Using Jeongamsu",
+      "content": "You can use Jeongamsu through your web browser or download Jeongamsu to your device to use it anytime."
     }
   },
 
   "Contact": {
     "page": {
-      "title": "Contact Us",
-      "description": "Need help? Here's how to reach us"
+      "title": "Contact",
+      "description": "Need help? You can reach us in the following ways"
     },
     "location": {
-      "title": "Find Us",
-      "building": "Building Name",
-      "room": "Room ###",
-      "mapLink": "Open in Naver Maps"
+      "title": "How to Find Us",
+      "building": "Science Building",
+      "room": "Room 101",
+      "address": "77 Jeongneung-ro, Seongbuk District, Seoul",
+      "viewMap": "View on Naver Maps",
+      "mapLink": "https://naver.me/xCBQdqAR"
     },
     "office": {
       "title": "Office Hours",
       "regular": "Monday - Friday: 9:00 AM - 5:00 PM",
-      "lunch": "Lunch Break: 12:00 PM - 1:00 PM",
+      "lunch": "Lunch Hours: 12:00 PM - 1:00 PM",
       "consultation": {
         "title": "Student Consultation Hours",
         "hours": "2:00 PM - 4:00 PM",
-        "note": "* No appointment needed during these hours"
+        "note": "* Advance reservation and scheduling required during consultation hours *"
       }
     },
     "department": {
-      "title": "Department Contacts",
+      "title": "Department Contact",
       "administrative": {
         "title": "Administrative Office",
-        "note": "For general inquiries, documentation, and administrative support"
+        "email": "math4740@kookmin.ac.kr",
+        "email-2": "wnsgml3508@kookmin.ac.kr",
+        "phone": "+82-2-910-4740",
+        "note": "General inquiries, document issuance, administrative support"
       },
       "student": {
-        "title": "Student Affairs",
-        "note": "For course registration, academic advice, and student support"
+        "title": "Student Support",
+        "email": "kmu.gaon2025@gamil.com",
+        "note": "Course registration, academic counseling, student support"
       }
     },
     "emergency": {
       "title": "Emergency Contact",
-      "available": "Available 24/7"
+      "phone": "+82-2-910-4740",
+      "available": "Available 24 hours"
     },
     "support": {
-      "title": "Technical Support"
+      "title": "Technical Support",
+      "email": "math4740@kookmin.ac.kr"
     },
     "report": {
-      "title": "Found an Issue?",
-      "description": "Report technical issues or suggest improvements",
-      "bug": "Report Bug",
-      "email": "Email Support"
+      "title": "Found an issue?",
+      "description": "Let us know about technical problems or suggestions for improvement",
+      "bug": "Report a Bug",
+      "email": "Email Inquiry"
     }
   },
+
   "Footer": {
     "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
+    "terms": "Terms of Use",
     "contact": "Contact Us",
-    "department": "Department of Information Security, <br/> Cryptography and Mathematics"
+    "department": "Department of Information Security, Cryptography and Mathematics"
   }
 }
