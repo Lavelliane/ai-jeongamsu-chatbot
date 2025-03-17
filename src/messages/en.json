@@ -11,6 +11,7 @@
     "placeholder": "What would you like to know?",
     "sendButton": "Send",
     "waitingMessage": "Please wait a moment...",
+    "skipAudio": "Skip Audio",
     "premadeQuestions": {
       "title": "Department of Information Security, Cryptography and Mathematics FAQ",
       "question-1": "How do I apply for admission?",

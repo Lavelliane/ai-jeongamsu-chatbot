@@ -1,6 +1,12 @@
 'use client';
 import React, { useEffect, useRef, useState, useTransition } from 'react';
-import { LucideMessageCircleQuestion, LucideShield, Send } from 'lucide-react';
+import {
+  LucideMessageCircleQuestion,
+  LucideShield,
+  Send,
+  Volume2,
+  VolumeX,
+} from 'lucide-react';
 import LanguageDropdown from '@/components/LanguageDropdown';
 import { useTranslations } from 'next-intl';
 import { createClient } from '@/lib/db/client';
@@ -47,16 +53,18 @@ const ChatbotInterface = ({
   const searchParams = useSearchParams();
   const [tab, setTab] = useState('chat');
   const questions = usePremadeQuestions();
+  const [audioEnabled, setAudioEnabled] = useState(true);
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
 
   let sessionId = searchParams.get('session');
   const [client, setClient] = useState<boolean>(false);
 
   // Auto-focus input after transitions complete
   useEffect(() => {
-    if (!isPending && inputRef.current) {
+    if (!isPending && inputRef.current && message.trim() !== '') {
       inputRef.current.focus();
     }
-  }, [isPending]);
+  }, [isPending, message]);
 
   // Scroll to bottom when messages change
   const scrollToBottom = () => {
@@ -85,7 +93,7 @@ const ChatbotInterface = ({
     } else {
       setMessages(initialMessages.filter(msg => msg.session_id === sessionId));
     }
-  }, [client]);
+  }, [client, initialMessages, sessionId]);
 
   useEffect(() => {
     if (client) {
@@ -143,6 +151,45 @@ const ChatbotInterface = ({
     }
   }, [client]);
 
+  // Audio preference management
+  useEffect(() => {
+    if (client) {
+      // Load audio preference from cookie on initial load
+      const savedAudioPref = document.cookie
+        .split('; ')
+        .find(row => row.startsWith('audioEnabled='));
+
+      if (savedAudioPref) {
+        setAudioEnabled(savedAudioPref.split('=')[1] === 'true');
+      }
+    }
+  }, [client]);
+
+  // Save audio preference to cookie whenever it changes
+  useEffect(() => {
+    if (client) {
+      const expiryDate = new Date();
+      expiryDate.setFullYear(expiryDate.getFullYear() + 1);
+      document.cookie = `audioEnabled=${audioEnabled}; expires=${expiryDate.toUTCString()}; path=/`;
+    }
+  }, [audioEnabled, client]);
+
+  const toggleAudio = () => {
+    setAudioEnabled(prev => !prev);
+    // Stop any currently playing audio when toggling off
+    if (audioEnabled && audioRef.current) {
+      audioRef.current.pause();
+      setIsAudioPlaying(false);
+    }
+  };
+
+  const skipAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      setIsAudioPlaying(false);
+    }
+  };
+
   const handleSendMessage = async (directMessage: string | undefined) => {
     if ((message.trim() === '' || isPending) && !directMessage) return;
 
@@ -171,30 +218,40 @@ const ChatbotInterface = ({
           // Get bot response
           const response = await handleChat(currentMessage, sessionId ?? '');
 
-          // Play voice if available
-          try {
-            const voice = await fetch('/api/voice', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({ text: response }),
-            });
+          // Play voice if available and audio is enabled
+          if (audioEnabled) {
+            try {
+              const voice = await fetch('/api/voice', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ text: response }),
+              });
 
-            if (voice.ok) {
-              const audioBlob = await voice.blob();
-              const audioUrl = URL.createObjectURL(audioBlob);
+              if (voice.ok) {
+                const audioBlob = await voice.blob();
+                const audioUrl = URL.createObjectURL(audioBlob);
 
-              if (audioRef.current) {
-                audioRef.current.src = audioUrl;
-                audioRef.current.play().catch(error => {
-                  console.error('Audio playback failed:', error);
-                });
+                if (audioRef.current) {
+                  setIsAudioPlaying(true);
+                  audioRef.current.src = audioUrl;
+                  audioRef.current.play().catch(error => {
+                    console.error('Audio playback failed:', error);
+                    setIsAudioPlaying(false);
+                  });
+
+                  // Set event listener to update state when audio ends
+                  audioRef.current.onended = () => {
+                    setIsAudioPlaying(false);
+                  };
+                }
               }
+            } catch (voiceError) {
+              console.error('Voice generation failed:', voiceError);
+              setIsAudioPlaying(false);
+              // Continue without voice
             }
-          } catch (voiceError) {
-            console.error('Voice generation failed:', voiceError);
-            // Continue without voice
           }
 
           // Update message with response (optimistic update)
@@ -262,6 +319,14 @@ const ChatbotInterface = ({
                 </div>
               </div>
               <div className="flex items-center space-x-4">
+                <Button
+                  isIconOnly
+                  variant="light"
+                  onPress={toggleAudio}
+                  className="text-shark-100"
+                >
+                  {audioEnabled ? <Volume2 size={20} /> : <VolumeX size={20} />}
+                </Button>
                 <LanguageDropdown />
               </div>
             </div>
@@ -320,6 +385,18 @@ const ChatbotInterface = ({
 
               {/* Message input */}
               <div className="flex bg-shark-900/80 border-t border-shark-700 px-4 h-16 shadow-md relative">
+                {/* Skip audio button */}
+                {isAudioPlaying && (
+                  <Button
+                    variant="flat"
+                    color="default"
+                    size="sm"
+                    onPress={skipAudio}
+                    className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full mb-2 bg-shark-800 text-shark-100 rounded-t-xl rounded-b-none border-t border-l border-r border-shark-700 py-1 px-3 shadow-md"
+                  >
+                    {t('skipAudio')}
+                  </Button>
+                )}
                 {/* Quick questions */}
                 <Popover
                   triggerType="menu"
@@ -385,7 +462,6 @@ const ChatbotInterface = ({
                 ${isPending ? 'bg-opacity-80' : ''}
                 `}
                     disabled={isPending}
-                    autoFocus
                   />
                   <Button
                     onPress={() => handleSendMessage(undefined)}

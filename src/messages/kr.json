@@ -11,6 +11,7 @@
     "placeholder": "무엇을 알고 싶으신가요?",
     "sendButton": "보내기",
     "waitingMessage": "잠시만 기다려주세요...",
+    "skipAudio": "오디오 건너뛰기",
     "premadeQuestions": {
       "title": "정보보안암호수학과 FAQ",
       "question-1": "입학은 어떻게 하나요?",

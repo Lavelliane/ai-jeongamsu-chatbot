@@ -18,6 +18,25 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Jeonghamsu',
   description: 'Jeonghamsu | Department of Cyber Security Chatbot',
+  openGraph: {
+    title: 'Jeonghamsu',
+    description: 'Department of Cyber Security Chatbot',
+    images: [
+      {
+        url: '/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Jeonghamsu - Cyber Security Chatbot',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Jeonghamsu',
+    description: 'Department of Cyber Security Chatbot',
+    images: ['/opengraph-image.png'],
+  },
 };
 
 export const viewport: Viewport = {
